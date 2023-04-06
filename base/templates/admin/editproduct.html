@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Edit</title>
+</head>
+<body>
+{% for row in data %}
+    <h2>UPDATE PAGE</h2>
+    <form action="/admin/update_product" method="post">
+        <input type="hidden" name="product_id" value="{{ row["product_id"] }}">
+        product_name : <input type="text" name="productname"
+                              value="{{ row["product_name"] }}"><br><br>
+        product_description : <input type="text" name="productdiscription"
+                                     value="{{ row["product_discription"] }}"><br><br>
+        product_image : <input type="file" name="productimage" value="{{ row["product_image_path"] }}{{  row["product_image_name"] }}"
+                               accept="image/jpeg,image/png"><br><br>
+
+       product_image : <img src="{{url_for('static',  filename='product/download.jpg')}}">
+        <input type="submit" name="submit">
+    </form>
+{% endfor %}
+</body>
+</html>
+
+

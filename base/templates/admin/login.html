@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Login</title>
+</head>
+<h2><u>LOGIN HERE</u></h2>
+<body>
+<form action="/admin/load_login" method="post">
+    Email : <input type="email" name="email"><br><br>
+    Password : <input type="password" name="password"><br><br>
+    <input type="submit" name="submit">
+    <button><a href="/admin/register">signup</a></button>
+</form>
+{% with messages = get_flashed_messages() %}
+    {% if messages %}
+        {{ messages[0] }}
+    {% endif %}
+{% endwith %}
+</body>
+</html>
+

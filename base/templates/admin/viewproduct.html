@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>View</title>
+</head>
+<h3>View Data</h3>
+<body>
+<table border="1px solid black">
+    <thead>
+    <tr>
+        <th>product_name</th>
+        <th>product_description</th>
+        <th>Product_image</th>
+        <td>Action</td>
+    </tr>
+    </thead>
+    <tbody>
+    {% for row in data %}
+        <tr>
+            <td>{{ row["product_name"] }}</td>
+            <td>{{ row["product_discription"] }}</td>
+            <td><a href= "{{row["product_image_path"]}}{{row["product_image_name"]}}">Click Here</a></td>
+            <td><a href="/admin/delete_product?product_id={{ row['product_id'] }}">DELETE</a></td>
+            <td><a href="/admin/edit_product?product_id={{ row['product_id'] }}">UPDATE</a></td>
+        </tr>
+    {% endfor %}
+    </tbody>
+</table>
+</body>
+</html>
