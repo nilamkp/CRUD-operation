@@ -11,6 +11,7 @@ def home():
 @app.route('/admin/register')
 def register():
     return render_template('admin/register.html')
+ # this is for testing purpose
 
 @app.route('/admin/load_login', methods=["POST"])
 def load_login():
